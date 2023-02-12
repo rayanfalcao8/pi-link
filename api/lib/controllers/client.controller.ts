@@ -3,7 +3,7 @@ import * as _ from "lodash";
 import * as validator from "validator";
 import Handlers from "../core/handlers";
 import { Utils } from "../core/utils";
-import { getSupportedCodeFixes } from "typescript";
+import * as dotenv from "dotenv";
 import handlers from "../core/handlers";
 import * as PizZip from "pizzip";
 import * as nodemailer from "nodemailer";
@@ -21,6 +21,7 @@ export class ClientController {
         let oErr;
         let fs = require("fs");
         let path = require("path");
+        dotenv.config();
 
         let sender = nodemailer.createTransport({
             service: 'gmail',
