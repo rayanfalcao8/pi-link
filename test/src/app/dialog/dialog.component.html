@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>Add Item Form</h1>
+
+<div mat-dialog-content>
+    <form [formGroup]="productForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input formControlName="name" matInput placeholder="Nom">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Prenom</mat-label>
+          <input formControlName="surname" matInput placeholder="Prenom">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Numero d'identite</mat-label>
+          <input formControlName="id_number" matInput placeholder="Numero d'identite">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Delivrée a</mat-label>
+          <input formControlName="issued_at" matInput placeholder="Delivrée a">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Delivrée le</mat-label>
+            <input formControlName="issued_on" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Domilcilié a</mat-label>
+          <input formControlName="residence" matInput placeholder="Domilcilié a">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="Email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Téléphone</mat-label>
+          <input formControlName="phone_number" matInput placeholder="Téléphone">
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addClient()">{{ actionBtn }}</button>
+</div>

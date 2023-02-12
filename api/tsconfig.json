@@ -1,0 +1,27 @@
+{
+  //"compileOnSave": false,
+  "compilerOptions": {
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "pretty": true,
+      "sourceMap": true,
+      "target": "es2017",
+      "baseUrl": "./server",
+      "outDir": "./dist",
+      "typeRoots": ["./typings"],
+      "types": ["node"],
+      "removeComments": false,
+      "watch": true
+      /* whenever we run the tsc command, all the ts files in the server folder will be compiled to js files in the dist folder */
+  },
+  "include": [
+      "server/**/*.ts" /* Include all files  in the server folder  ending with the .ts extension */
+      // '**' means All folders and subfolder
+  ],
+  "exclude": [
+      "node_modules", /* Exclude all files in node_modules folder */
+      "coverage"
+  ],
+  "noImplicitAny": true,
+  "strictNullChecks": true
+}

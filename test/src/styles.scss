@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$crud-app-primary: mat.define-palette(mat.$indigo-palette, 900);
+$crud-app-accent: mat.define-palette(mat.$amber-palette, 700, 800);
+
+$crud-app-warn: mat.define-palette(mat.$red-palette);
+
+$crud-app-theme: mat.define-light-theme((
+  color: (
+    primary: $crud-app-primary,
+    accent: $crud-app-accent,
+    warn: $crud-app-warn,
+  )
+));
+
+@include mat.all-component-themes($crud-app-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
