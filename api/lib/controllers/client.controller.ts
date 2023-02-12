@@ -24,12 +24,12 @@ export class ClientController {
 
         let sender = nodemailer.createTransport({
             service: 'gmail',
-            host: 'smtp.gmail.com',
-            port: 465,
+            host: process.env.SMTP_HOST || 'smtp.gmail.com',
+            port: process.env.SMTP_HOST || 465,
             secure: true,
             auth: {
-              user: 'rayanfalcao8@gmail.com',
-              pass: 'sqxgbydfeujrkedk'
+              user: process.env.SMTP_EMAIL,
+              pass: process.env.SMTP_PASSWORD
             }
           });
         
